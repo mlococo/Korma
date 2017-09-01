@@ -10,6 +10,9 @@
         clojure.reflect
         [korma.test.integration.helpers :only [populate address]]))
 
+;; lots of these tests fail on purpose, pick one to run that is interesting to you
+;; $ lein test :only korma.test.integration.delete/interop-no-race 
+
 (defdb db (sqlite3 {:db "mike.db"}))
 (use-fixtures :once
   (fn [f]
